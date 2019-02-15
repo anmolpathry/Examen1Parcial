@@ -12,6 +12,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { FavoritosProvider } from '../providers/favoritos/favoritos';
 import { FavoritosPage } from '../pages/favoritos/favoritos';
 import { BusquedaPage } from '../pages/busqueda/busqueda';
+import { VideojuegosPage } from '../pages/videojuegos/videojuegos';
+import { RemodelacionesPage } from '../pages/remodelaciones/remodelaciones';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { BusquedaPage } from '../pages/busqueda/busqueda';
     CompuPage,
     TabsPage,
     FavoritosPage,
-    BusquedaPage
+    BusquedaPage,
+    VideojuegosPage,
+    RemodelacionesPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,9 @@ import { BusquedaPage } from '../pages/busqueda/busqueda';
     CompuPage,
     TabsPage,
     FavoritosPage,
-    BusquedaPage
+    BusquedaPage,
+    VideojuegosPage,
+    RemodelacionesPage
   ],
   providers: [
     StatusBar,
