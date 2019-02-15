@@ -5,11 +5,41 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
-    <ion-title>Remodelaciones</ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <ion-title>
+     Venta de Videojuegos
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)= "buscar()" icon-only  color="royal">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4 *ngFor = "let rem of remodelaciones">
+        <ion-card (click)= "verRem(rem)">
+          <img *ngIf = "rem.ad.hasOwnProperty('thumbnail')"
+          src= "http://img.segundamano.mx/cover/{{rem.ad.thumbnail.path}}">
+          <img *ngIf = "!rem.ad.hasOwnProperty('thumbnail')"
+          src= "../assets/imgs/logo.png">
+          <h2 *ngIf = "rem.ad.hasOwnProperty('subject')">
+           {{rem.ad.subject}}
+          </h2>
+          <h2 *ngIf = "rem.ad.hasOwnProperty('locations')">
+          {{rem.ad.locations[0].locations[0].label}}, {{rem.ad.locations[0].label}}
+          </h2>
+          <h1 *ngIf = "rem.ad.hasOwnProperty('list_price')">
+            {{rem.ad.list_price.label}} {{rem.ad.list_price.currency}}
+           </h1>
+           <h3  *ngIf = "rem.ad.hasOwnProperty('list_time')">
+           {{rem.ad.list_time.label}}
+           </h3>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

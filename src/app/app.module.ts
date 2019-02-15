@@ -14,6 +14,10 @@ import { FavoritosPage } from '../pages/favoritos/favoritos';
 import { BusquedaPage } from '../pages/busqueda/busqueda';
 import { VideojuegosPage } from '../pages/videojuegos/videojuegos';
 import { RemodelacionesPage } from '../pages/remodelaciones/remodelaciones';
+import { JuegoinfoPage } from '../pages/juegoinfo/juegoinfo';
+import { Busqueda2Page } from '../pages/busqueda2/busqueda2';
+import { RemInfoPage } from '../pages/rem-info/rem-info';
+import { Buscar3pagePage } from '../pages/buscar3page/buscar3page';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { RemodelacionesPage } from '../pages/remodelaciones/remodelaciones';
     FavoritosPage,
     BusquedaPage,
     VideojuegosPage,
-    RemodelacionesPage
+    RemodelacionesPage,
+    JuegoinfoPage,
+    Busqueda2Page,
+    RemInfoPage,
+    Buscar3pagePage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +48,11 @@ import { RemodelacionesPage } from '../pages/remodelaciones/remodelaciones';
     FavoritosPage,
     BusquedaPage,
     VideojuegosPage,
-    RemodelacionesPage
+    RemodelacionesPage,
+    JuegoinfoPage,
+    Busqueda2Page,
+    RemInfoPage,
+    Buscar3pagePage
   ],
   providers: [
     StatusBar,

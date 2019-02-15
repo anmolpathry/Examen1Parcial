@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CompuPage } from '../compu/compu';
+import { JuegoinfoPage } from '../juegoinfo/juegoinfo';
 
 /**
  * Generated class for the BusquedaPage page.
@@ -17,8 +18,11 @@ import { CompuPage } from '../compu/compu';
 export class BusquedaPage {
 
   computadoras= [];
+  videojuegos = [];
   items= [];
+  items2 = [];
   compuPage = CompuPage;
+  juegoInfo = JuegoinfoPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.computadoras= this.navParams.get('compu');
@@ -34,7 +38,9 @@ export class BusquedaPage {
    this.items = this.computadoras.filter(compu => {
      return compu.ad.subject.toLowerCase().includes(ev.target.value.toLowerCase());
    });
+
   }
+  
 
   verCompu(compu){
    this.navCtrl.push(this.compuPage, {compu: compu});

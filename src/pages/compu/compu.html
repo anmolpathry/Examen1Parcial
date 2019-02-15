@@ -63,6 +63,15 @@
   </h2>
   </ion-card>
 
+  <ion-card>
+    <h2 *ngIf= "compu.ad.hasOwnProperty('user')">
+    Usuario: {{compu.ad.user.account.name}}
+    </h2>
+    <h2 *ngIf = "compu.ad.hasOwnProperty('list_time')">
+      Publicado:{{compu.ad.list_time.label}}
+    </h2>
+  </ion-card>
+
   
 
 </ion-content>
