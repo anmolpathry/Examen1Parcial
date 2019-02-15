@@ -8,12 +8,17 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {HttpClientModule} from '@angular/common/http'
 import { CompuPage } from '../pages/compu/compu';
+import { TabsPage } from '../pages/tabs/tabs';
+import { FavoritosProvider } from '../providers/favoritos/favoritos';
+import { FavoritosPage } from '../pages/favoritos/favoritos';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    CompuPage
+    CompuPage,
+    TabsPage,
+    FavoritosPage
   ],
   imports: [
     BrowserModule,
@@ -24,12 +29,15 @@ import { CompuPage } from '../pages/compu/compu';
   entryComponents: [
     MyApp,
     HomePage,
-    CompuPage
+    CompuPage,
+    TabsPage,
+    FavoritosPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    FavoritosProvider
   ]
 })
 export class AppModule {}

@@ -30,17 +30,37 @@
   </ion-card>
 
   <ion-card>
-    <h2>Caracteristicas</h2>
-    <h2 *ngIf = "compu.ad.hasOwnProperty('locations')" >
-    Ubicación:
+      <h2>Caracteristicas</h2>
+    <ion-item>
+      <h2 *ngIf = "compu.ad.hasOwnProperty('locations')" >
+      Ubicación:
    {{compu.ad.locations[0].locations[0].locations[0].label}}, {{compu.ad.locations[0].locations[0].label}},
    {{compu.ad.locations[0].label}}
-    </h2>
+      </h2>
+       <ion-icon *ngIf = "!fav.existe(compu)" name= "heart" item-end (click)= "favoritos(compu)"></ion-icon>
+      <ion-icon *ngIf = "fav.existe(compu)" name= "heart" color="danger" item-end  (click)= "fav.remove(compu)"></ion-icon> 
+    </ion-item>
 
-    <h2 *ngIf= "compu.ad.hasOwnProperty('list_time')">
-     Publicado: {{compu.ad.list_time.label}}
-    </h2>
+      <ion-item>
+      <h2 *ngIf = "compu.ad.hasOwnProperty('list_time')">
+        Publicado:{{compu.ad.list_time.label}}
+      </h2>
+        <ion-icon name= "share" item-end></ion-icon>
+    </ion-item>
 
+    <ion-item>
+      <h2 *ngIf= "compu.ad.hasOwnProperty('ad_details')">
+      Marca: {{compu.ad.ad_details.computer_type.single.label}}
+      </h2>
+    </ion-item>
+
+  </ion-card>
+
+  <ion-card>
+  <h2>Descripcion</h2>
+  <h2 *ngIf = "compu.ad.hasOwnProperty('body')">
+   {{compu.ad.body}}
+  </h2>
   </ion-card>
 
   
