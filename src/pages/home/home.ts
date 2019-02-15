@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { CompuPage } from '../compu/compu';
+import { BusquedaPage } from '../busqueda/busqueda';
 
 @Component({
   selector: 'page-home',
@@ -10,6 +11,7 @@ import { CompuPage } from '../compu/compu';
 export class HomePage {
   computadoras= [];
   compuPage = CompuPage;
+  buscarPage= BusquedaPage
 
   constructor(public navCtrl: NavController, public http: HttpClient) {
     this.http.get('/v1/klfst?&category=5020&offset=1&lim=29&lang=es')
@@ -26,5 +28,9 @@ export class HomePage {
   verCompu(compu){
   this.navCtrl.push(this.compuPage, {compu: compu});
   }
+
+  buscar(){
+    this.navCtrl.push(this.buscarPage,{compu: this.computadoras});
+   }
 
 }
