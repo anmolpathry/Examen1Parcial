@@ -5,17 +5,17 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
-    <ion-title >
-      <h2>
+  <ion-navbar >
+    <ion-title style= "background-color: #CCC9E7" >
+      <h2 style= "color: #2E3138 ">
         Segunda Mano
       </h2>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-card>
+<ion-content padding style= "background-color: #CCC9E7">
+  <ion-card style="background-color:#BC4B51" >
     <ion-slides pager>
      <ion-slide *ngFor= "let img of imgs">
        <img src = "https://img.segundamano.mx/medium/{{img.path}}">
@@ -24,19 +24,20 @@
   </ion-card>
 
   
-  <ion-card>
-    <h2 *ngIf= "compu.ad.hasOwnProperty('subject')">
+  <ion-card style="background-color:rgb(129, 189, 169)">
+    <h1 style= "color: #4C061D" *ngIf= "compu.ad.hasOwnProperty('subject')">
      {{compu.ad.subject}}
-    </h2>
-    <h2 *ngIf = "compu.ad.hasOwnProperty('list_price')">
+    </h1>
+    <h1 style= "color: #4C061D" *ngIf = "compu.ad.hasOwnProperty('list_price')">
       {{compu.ad.list_price.label}} {{compu.ad.list_price.currency}}
-     </h2>
+     </h1>
   </ion-card>
 
-  <ion-card>
-      <h2>Caracteristicas</h2>
-    <ion-item>
-      <h2 *ngIf = "compu.ad.hasOwnProperty('locations')" >
+  <ion-card style="background-color:rgb(60, 141, 161)">
+    <ion-card-content>
+      <h1 style= "color:rgb(228, 156, 48)" >Caracteristicas</h1>
+    <ion-item style="background-color:rgb(241, 127, 133)">
+      <h2 style= "color:rgb(255, 255, 255)" *ngIf = "compu.ad.hasOwnProperty('locations')" >
       Ubicación:
    {{compu.ad.locations[0].locations[0].locations[0].label}}, {{compu.ad.locations[0].locations[0].label}},
    {{compu.ad.locations[0].label}}
@@ -45,35 +46,35 @@
       <ion-icon *ngIf = "fav.existe(compu)" name= "heart" color="danger" item-end  (click)= "fav.remove(compu)"></ion-icon> 
     </ion-item>
 
-      <ion-item>
-      <h2 *ngIf = "compu.ad.hasOwnProperty('list_time')">
+      <ion-item style="background-color:rgb(241,127,133)">
+      <h2 style= "color:rgb(255, 255, 255)" *ngIf = "compu.ad.hasOwnProperty('list_time')">
         Publicado:{{compu.ad.list_time.label}}
       </h2>
         <ion-icon name= "share" item-end></ion-icon>
     </ion-item>
 
-    <ion-item>
-      <h2 *ngIf= "compu.ad.hasOwnProperty('ad_details')">
+    <ion-item style="background-color: rgb(241,127,133)">
+      <h2 style= "color:rgb(255, 255, 255)" *ngIf= "compu.ad.hasOwnProperty('ad_details')">
       Marca: {{compu.ad.ad_details.computer_type.single.label}}
       </h2>
     </ion-item>
-
+  </ion-card-content>
   </ion-card>
 
-  <ion-card>
-  <h2>Descripcion</h2>
-  <h2 *ngIf = "compu.ad.hasOwnProperty('body')">
+  <ion-card style="background-color: rgb(161, 200, 109)">
+  <h1 style="color: rgb(44, 44, 175)">Descripcion</h1>
+  <h2 style="color: rgb(79, 79, 245)" *ngIf = "compu.ad.hasOwnProperty('body')">
    {{compu.ad.body}}
   </h2>
   </ion-card>
 
-  <ion-card>
-    <h2 *ngIf= "compu.ad.hasOwnProperty('user')">
+  <ion-card style="background-color:#4C061D" >
+    <h2 style="color: rgb(255, 255, 255)" *ngIf= "compu.ad.hasOwnProperty('user')">
     Usuario: {{compu.ad.user.account.name}}
     </h2>
-    <h2 *ngIf = "compu.ad.hasOwnProperty('list_time')">
+    <h3 style="color: rgb(255, 255, 255)" *ngIf = "compu.ad.hasOwnProperty('list_time')">
       Publicado:{{compu.ad.list_time.label}}
-    </h2>
+    </h3>
   </ion-card>
 
   
