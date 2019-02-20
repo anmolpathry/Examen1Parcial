@@ -38,7 +38,7 @@
    {{rem.ad.locations[0].label}}
       </h2>
        <ion-icon *ngIf = "!fav.existe(rem)" name= "heart" item-end (click)= "favoritos(rem)"></ion-icon>
-      <ion-icon *ngIf = "fav.existe(rem)" name= "heart" color="danger" item-end  (click)= "fav.remove(juego)"></ion-icon> 
+      <ion-icon *ngIf = "fav.existe(rem)" name= "heart" color="danger" item-end  (click)= "fav.remove(rem)"></ion-icon> 
     </ion-item>
 
       <ion-item>

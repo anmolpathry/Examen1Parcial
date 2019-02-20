@@ -27,7 +27,7 @@ export class FavoritosProvider {
       this.computadoras.splice(index,1);
 
       const toast = this.toastCtrl.create({
-        message: 'Casa eliminada de Favoritos',
+        message: 'Eliminada de Favoritos',
         duration: 3000,
         position: 'top'
       });
@@ -46,7 +46,7 @@ export class FavoritosProvider {
     this.computadoras.push(compu);
 
     const toast = this.toastCtrl.create({
-      message: 'Casa agregada a Favoritos',
+      message: 'Agregada a Favoritos',
       duration: 3000,
       position: 'top'
     });
