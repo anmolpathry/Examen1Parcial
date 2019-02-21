@@ -6,12 +6,16 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Segunda Mano</ion-title>
+    <ion-title style= "background-color: rgb(181, 241, 246)">
+      <h2>
+        Segunda Mano
+      </h2>
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-card>
+<ion-content padding style= "background-color: rgb(181,241,246)">
+  <ion-card style= "background-color: #028090">
     <ion-slides pager>
      <ion-slide *ngFor= "let img of imgs">
        <img src = "https://img.segundamano.mx/medium/{{img.path}}">
@@ -20,19 +24,19 @@
   </ion-card>
 
   
-  <ion-card>
-    <h2 *ngIf= "juego.ad.hasOwnProperty('subject')">
+  <ion-card style= "background-color: #028090">
+    <h1 style= "color: white" *ngIf= "juego.ad.hasOwnProperty('subject')">
      {{juego.ad.subject}}
-    </h2>
-    <h2 *ngIf = "juego.ad.hasOwnProperty('list_price')">
+    </h1>
+    <h1 style= "color: white" *ngIf = "juego.ad.hasOwnProperty('list_price')">
       {{juego.ad.list_price.label}} {{juego.ad.list_price.currency}}
-     </h2>
+     </h1>
   </ion-card>
 
-  <ion-card>
-      <h2>Caracteristicas</h2>
-    <ion-item>
-      <h2 *ngIf = "juego.ad.hasOwnProperty('locations')" >
+  <ion-card style= "background-color: #028090">
+      <h1 style="color: #4A051C">Caracteristicas</h1>
+    <ion-item style= "background-color: #028090">
+      <h2  style= "color: white" *ngIf = "juego.ad.hasOwnProperty('locations')" >
       Ubicación:
    {{juego.ad.locations[0].locations[0].locations[0].label}}, {{juego.ad.locations[0].locations[0].label}},
    {{juego.ad.locations[0].label}}
@@ -41,33 +45,33 @@
       <ion-icon *ngIf = "fav.existe(juego)" name= "heart" color="danger" item-end  (click)= "fav.remove(juego)"></ion-icon> 
     </ion-item>
 
-      <ion-item>
-      <h2 *ngIf = "juego.ad.hasOwnProperty('list_time')">
+      <ion-item style= "background-color: #028090">
+      <h2  style= "color: white" *ngIf = "juego.ad.hasOwnProperty('list_time')">
         Publicado:{{juego.ad.list_time.label}}
       </h2>
         <ion-icon name= "share" item-end></ion-icon>
     </ion-item>
 
-    <ion-item>
-      <h2 *ngIf= "juego.ad.hasOwnProperty('ad_details')">
+    <ion-item style= "background-color: #028090">
+      <h2  style= "color: white" *ngIf= "juego.ad.hasOwnProperty('ad_details')">
       Marca: {{juego.ad.ad_details.computer_type.single.label}}
       </h2>
     </ion-item>
 
   </ion-card>
 
-  <ion-card>
-  <h2>Descripcion</h2>
-  <h2 *ngIf = "juego.ad.hasOwnProperty('body')">
+  <ion-card style= "background-color: #028090">
+  <h1 style="color: #4A051C">Descripcion</h1>
+  <h2  style= "color: white" *ngIf = "juego.ad.hasOwnProperty('body')">
    {{juego.ad.body}}
   </h2>
   </ion-card>
   
-  <ion-card>
-    <h2 *ngIf= "juego.ad.hasOwnProperty('user')">
+  <ion-card style= "background-color: #028090">
+    <h2   style= "color: white" *ngIf= "juego.ad.hasOwnProperty('user')">
     Usuario: {{juego.ad.user.account.name}}
     </h2>
-    <h2 *ngIf = "juego.ad.hasOwnProperty('list_time')">
+    <h2   style= "color: white"*ngIf = "juego.ad.hasOwnProperty('list_time')">
       Publicado:{{juego.ad.list_time.label}}
     </h2>
   </ion-card>

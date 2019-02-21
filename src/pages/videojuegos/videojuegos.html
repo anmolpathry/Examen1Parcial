@@ -6,8 +6,10 @@
 -->
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-     Venta de Videojuegos
+    <ion-title style="background-color: rgb(216, 200, 210)">
+     <h2 style= "color: rgb(255, 255, 255)">
+       Venta de Videojuegos
+     </h2>
     </ion-title>
     <ion-buttons end>
       <button ion-button (click)= "buscar()" icon-only  color="royal">
@@ -17,25 +19,25 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding style="background-color: rgb(216, 200, 210)">
   <ion-grid>
     <ion-row>
       <ion-col col-4 *ngFor = "let juego of videojuegos">
-        <ion-card (click)= "verJuego(juego)">
+        <ion-card style="background-color: #584B53" (click)= "verJuego(juego)">
           <img *ngIf = "juego.ad.hasOwnProperty('thumbnail')"
           src= "http://img.segundamano.mx/cover/{{juego.ad.thumbnail.path}}">
           <img *ngIf = "!juego.ad.hasOwnProperty('thumbnail')"
           src= "../assets/imgs/logo.png">
-          <h2 *ngIf = "juego.ad.hasOwnProperty('subject')">
+          <h2 style="color: #FEF5EF" *ngIf = "juego.ad.hasOwnProperty('subject')">
            {{juego.ad.subject}}
           </h2>
-          <h2 *ngIf = "juego.ad.hasOwnProperty('locations')">
+          <h2 style="color: #FEF5EF"*ngIf = "juego.ad.hasOwnProperty('locations')">
           {{juego.ad.locations[0].locations[0].label}}, {{juego.ad.locations[0].label}}
           </h2>
-          <h1 *ngIf = "juego.ad.hasOwnProperty('list_price')">
+          <h1 style="color: rgb(161, 193, 243) " *ngIf = "juego.ad.hasOwnProperty('list_price')">
             {{juego.ad.list_price.label}} {{juego.ad.list_price.currency}}
            </h1>
-           <h3  *ngIf = "juego.ad.hasOwnProperty('list_time')">
+           <h3 style="color: #FEF5EF" *ngIf = "juego.ad.hasOwnProperty('list_time')">
            {{juego.ad.list_time.label}}
            </h3>
         </ion-card>

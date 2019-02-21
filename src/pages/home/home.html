@@ -17,21 +17,21 @@
   <ion-grid>
     <ion-row>
       <ion-col col-4 *ngFor = "let compu of computadoras">
-        <ion-card style="background-color:rgb(157, 223, 200)" (click)= "verCompu(compu)">
+        <ion-card style="background-color:rgb(223, 213, 222)" (click)= "verCompu(compu)">
           <img *ngIf = "compu.ad.hasOwnProperty('thumbnail')"
           src= "http://img.segundamano.mx/cover/{{compu.ad.thumbnail.path}}">
           <img *ngIf = "!compu.ad.hasOwnProperty('thumbnail')"
           src= "../assets/imgs/logo.png">
-          <h2 style="color:rgb(44, 35, 170)" *ngIf = "compu.ad.hasOwnProperty('subject')">
+          <h2 style="color:rgb(7, 3, 59)" *ngIf = "compu.ad.hasOwnProperty('subject')">
            {{compu.ad.subject}}
           </h2>
-          <h2 style="color:rgb(90, 34, 83)" *ngIf = "compu.ad.hasOwnProperty('locations')">
+          <h2 style="color:rgb(7, 3, 59)" *ngIf = "compu.ad.hasOwnProperty('locations')">
           {{compu.ad.locations[0].locations[0].label}}, {{compu.ad.locations[0].label}}
           </h2>
           <h1 style="color:rgb(112, 44, 45)" *ngIf = "compu.ad.hasOwnProperty('list_price')">
             {{compu.ad.list_price.label}} {{compu.ad.list_price.currency}}
            </h1>
-           <h3  *ngIf = "compu.ad.hasOwnProperty('list_time')">
+           <h3  style="color: rgb(7,3,59)" *ngIf = "compu.ad.hasOwnProperty('list_time')">
            {{compu.ad.list_time.label}}
            </h3>
         </ion-card>
