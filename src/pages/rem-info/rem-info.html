@@ -6,12 +6,16 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Segunda Mano</ion-title>
+    <ion-title style= "background-color: rgb(181, 241, 246)">
+      <h2>
+        Segunda Mano
+      </h2>
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-card>
+<ion-content padding style= "background-color: rgb(181, 241, 246)">
+  <ion-card  style= "background-color: #028090">
     <ion-slides pager>
      <ion-slide *ngFor= "let img of imgs">
        <img src = "https://img.segundamano.mx/medium/{{img.path}}">
@@ -20,19 +24,19 @@
   </ion-card>
 
   
-  <ion-card>
-    <h2 *ngIf= "rem.ad.hasOwnProperty('subject')">
+  <ion-card  style= "background-color: #028090">
+    <h1 style= "color: white" *ngIf= "rem.ad.hasOwnProperty('subject')">
      {{rem.ad.subject}}
-    </h2>
-    <h2 *ngIf = "rem.ad.hasOwnProperty('list_price')">
+    </h1>
+    <h1 style= "color: white" *ngIf = "rem.ad.hasOwnProperty('list_price')">
       {{rem.ad.list_price.label}} {{rem.ad.list_price.currency}}
-     </h2>
+     </h1>
   </ion-card>
 
-  <ion-card>
-      <h2>Caracteristicas</h2>
-    <ion-item>
-      <h2 *ngIf = "rem.ad.hasOwnProperty('locations')" >
+  <ion-card  style= "background-color: #028090">
+      <h1 style= "color:rgb(228, 156, 48)">Caracteristicas</h1>
+    <ion-item  style= "background-color: #028090">
+      <h2 style= "color: white" *ngIf = "rem.ad.hasOwnProperty('locations')" >
       Ubicación:
    {{rem.ad.locations[0].locations[0].locations[0].label}}, {{rem.ad.locations[0].locations[0].label}},
    {{rem.ad.locations[0].label}}
@@ -41,14 +45,14 @@
       <ion-icon *ngIf = "fav.existe(rem)" name= "heart" color="danger" item-end  (click)= "fav.remove(rem)"></ion-icon> 
     </ion-item>
 
-      <ion-item>
-      <h2 *ngIf = "rem.ad.hasOwnProperty('list_time')">
+      <ion-item style= "color: white" style= "background-color: #028090">
+      <h2 style="color:white" *ngIf = "rem.ad.hasOwnProperty('list_time')">
         Publicado:{{rem.ad.list_time.label}}
       </h2>
         <ion-icon name= "share" item-end></ion-icon>
     </ion-item>
 
-    <ion-item>
+    <ion-item style= "color: white" style= "background-color: #028090">
       <h2 *ngIf= "rem.ad.hasOwnProperty('ad_details')">
       Marca: {{rem.ad.ad_details.computer_type.single.label}}
       </h2>
@@ -56,18 +60,18 @@
 
   </ion-card>
 
-  <ion-card>
-  <h2>Descripcion</h2>
-  <h2 *ngIf = "rem.ad.hasOwnProperty('body')">
+  <ion-card  style= "background-color: #028090">
+  <h1 style= "color:rgb(228, 156, 48)">Descripcion</h1>
+  <h2 style= "color: white" *ngIf = "rem.ad.hasOwnProperty('body')">
    {{rem.ad.body}}
   </h2>
   </ion-card>
   
-  <ion-card>
-    <h2 *ngIf= "rem.ad.hasOwnProperty('user')">
+  <ion-card  style= "background-color: #028090">
+    <h2 style= "color: white" *ngIf= "rem.ad.hasOwnProperty('user')">
     Usuario: {{rem.ad.user.account.name}}
     </h2>
-    <h2 *ngIf = "rem.ad.hasOwnProperty('list_time')">
+    <h2  style= "color: white"*ngIf = "rem.ad.hasOwnProperty('list_time')">
       Publicado:{{rem.ad.list_time.label}}
     </h2>
   </ion-card>

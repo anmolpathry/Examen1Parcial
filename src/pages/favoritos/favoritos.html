@@ -6,21 +6,25 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Favoritos</ion-title>
+    <ion-title style= "background-color:rgb(255, 137, 174) ">
+     <h2 style=color:white>
+       Favoritos
+     </h2> 
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding style= "background-color:rgb(255, 137, 174) ">
   <ion-list>
-    <ion-item *ngFor = "let compu of items"> 
+    <ion-item style="background-color: #5F021F"  *ngFor = "let compu of items"> 
       <ion-thumbnail item-start>
           <img *ngIf= "compu.ad.hasOwnProperty('thumbnail')"
           src= "https://img.segundamano.mx/cover/{{compu.ad.thumbnail.path}}">
       </ion-thumbnail>
-      <h2 *ngIf = "compu.ad.hasOwnProperty('subject')">
+      <h2 style="color:white" *ngIf = "compu.ad.hasOwnProperty('subject')">
           {{compu.ad.subject}}
         </h2>
-        <p *ngIf= "compu.ad.hasOwnProperty('list_price')">
+        <p style="color:white"*ngIf= "compu.ad.hasOwnProperty('list_price')">
             {{compu.ad.list_price.label}}
          </p>
       <button ion-button clear item-end (click)= "verCompu(compu)">Ver</button>

@@ -6,23 +6,27 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Búsqueda</ion-title>
+    <ion-title style="background-color:rgb(213, 217, 250) ">
+     <h2 style="color:rgb(243, 79, 148)">
+       Búsqueda
+     </h2> 
+    </ion-title>
   </ion-navbar>
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-searchbar style="background-color:rgb(213, 217, 250) " (ionInput)="getItems($event)"></ion-searchbar>
 
 </ion-header>
 
-<ion-content padding>
+<ion-content padding style="background-color:rgb(213, 217, 250) ">
   <ion-list>
-    <ion-item *ngFor = "let rem of items"> 
+    <ion-item style="background-color: rgb(218, 142, 157)" *ngFor = "let rem of items"> 
       <ion-thumbnail item-start>
           <img *ngIf= "rem.ad.hasOwnProperty('thumbnail')"
           src= "https://img.segundamano.mx/cover/{{rem.ad.thumbnail.path}}">
       </ion-thumbnail>
-      <h2 *ngIf = "rem.ad.hasOwnProperty('subject')">
+      <h2 style="color: #011936"*ngIf = "rem.ad.hasOwnProperty('subject')">
           {{rem.ad.subject}}
         </h2>
-        <p *ngIf= "rem.ad.hasOwnProperty('list_price')">
+        <p style="color: #F4FFFD" *ngIf= "rem.ad.hasOwnProperty('list_price')">
             {{rem.ad.list_price.label}}
          </p>
       <button ion-button clear item-end (click)= "verRem(rem)">Ver</button>
